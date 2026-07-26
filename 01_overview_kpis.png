@@ -1,0 +1,24 @@
+# Power BI dashboard
+
+The report contains six pages:
+
+1. **Overview** — headline KPIs.
+2. **Overview 2** — customer and LTV distribution by RFM segment.
+3. **Customer Segments** — segment comparison and retention priority table.
+4. **Engagement & Payments** — LTV and customer mix by usage and payment method.
+5. **Engagement & Payments 2** — cashback, referrals and support interactions.
+6. **Support & Inactivity** — inactivity risk, support tickets, satisfaction and resolution time.
+
+## Screenshots
+
+![Dashboard pages](screenshots/00_dashboard_pages.png)
+
+## Power BI file
+
+The `.pbix` file was not included in the supplied files. Before publishing the repository, place it here as:
+
+```text
+dashboard/digital_wallet_product_analytics.pbix
+```
+
+The DAX measures used in the report are documented in [`DAX_MEASURES.md`](DAX_MEASURES.md).

@@ -1,0 +1,109 @@
+# Power BI DAX measures
+
+```DAX
+Customers =
+DISTINCTCOUNT(customer_analytics[Customer_ID])
+```
+
+```DAX
+Total LTV =
+SUM(customer_analytics[LTV])
+```
+
+```DAX
+Average LTV =
+AVERAGE(customer_analytics[LTV])
+```
+
+```DAX
+Average Transactions =
+AVERAGE(customer_analytics[Total_Transactions])
+```
+
+```DAX
+Average Satisfaction =
+AVERAGE(customer_analytics[Customer_Satisfaction_Score])
+```
+
+```DAX
+High Value at Risk Customers =
+CALCULATE(
+    [Customers],
+    customer_analytics[RFM_Segment] = "High Value at Risk"
+)
+```
+
+```DAX
+High Value at Risk Share =
+DIVIDE(
+    [High Value at Risk Customers],
+    [Customers]
+)
+```
+
+```DAX
+Champions Customers =
+CALCULATE(
+    [Customers],
+    customer_analytics[RFM_Segment] = "Champions"
+)
+```
+
+```DAX
+At Risk Customers =
+CALCULATE(
+    [Customers],
+    customer_analytics[RFM_Segment] = "High Value at Risk"
+)
+```
+
+```DAX
+Average Recency =
+AVERAGE(customer_analytics[Last_Transaction_Days_Ago])
+```
+
+```DAX
+Average Cashback =
+AVERAGE(customer_analytics[Cashback_Received])
+```
+
+```DAX
+Average Referrals =
+AVERAGE(customer_analytics[Referral_Count])
+```
+
+```DAX
+Average Support Tickets =
+AVERAGE(customer_analytics[Support_Tickets_Raised])
+```
+
+```DAX
+Average Resolution Time =
+AVERAGE(customer_analytics[Issue_Resolution_Time])
+```
+
+```DAX
+Dormant Customers =
+CALCULATE(
+    [Customers],
+    customer_analytics[Inactivity_Risk] = "Dormant"
+)
+```
+
+```DAX
+Dormant Share =
+DIVIDE(
+    [Dormant Customers],
+    [Customers]
+)
+```
+
+```DAX
+Blank Age Groups =
+CALCULATE(
+    [Customers],
+    ISBLANK(customer_analytics[Age_Group])
+)
+```
+
+> In Power BI locales that use semicolons as separators, replace commas with semicolons.

@@ -1,0 +1,5 @@
+PGUSER=postgres
+PGPASSWORD=replace_with_your_password
+PGHOST=localhost
+PGPORT=5432
+PGDATABASE=digital_wallet_analytics
